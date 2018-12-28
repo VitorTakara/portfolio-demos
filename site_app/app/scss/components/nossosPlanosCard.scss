@@ -1,0 +1,181 @@
+.nossosPlanosCard {
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+    min-height: 400px;
+
+    &-card {
+        background: white;
+        width: 300px;
+        border-radius: 15px;
+
+        &-shadow {
+            box-shadow: 0px 2px 6px 0px #00000036;
+        }
+
+        &-bigShadow {
+            box-shadow: 0px 8px 30px 0px #00000036;
+        }
+
+        &-info {
+            padding: 40px 0 45px 0;
+
+            &-title {
+                font-weight: 800;
+                letter-spacing: 0.3rem;
+                font-size: 1.4rem;
+                padding-bottom: 20px;
+                text-transform: uppercase;
+
+                &-bronze {
+                    color: #643f27;
+                }
+
+                &-prata {
+                    color: #4d4d4d;
+                }
+
+                &-ouro {
+                    color: #ff6600;
+                }
+            }
+
+            ul {
+                margin-bottom: 40px;
+            }
+
+            li {
+                margin-bottom: 15px;
+                font-size: 0.9rem;
+            }
+
+            &-btn {
+                text-decoration: none;
+                color: white;
+                letter-spacing: 0.2rem;
+                text-transform: uppercase;
+                background: #ccc;
+                border-radius: 50px;
+                padding: 15px 25px;
+                font-size: 0.9rem;
+
+                &-bronze {
+                    background: #895637;
+                    background: linear-gradient(135deg, #895637 0%, #643f27 99%);
+                }
+
+                &-prata {
+                    background: #4d4d4d;
+                    background: linear-gradient(135deg, #4d4d4d 0%, #343433 99%);
+                }
+
+                &-ouro {
+                    background: #ff893a;
+                    background: linear-gradient(135deg, #ff893a 0%, #ff6600 99%);
+                }
+            }
+        }
+    }
+
+    &-ouro {
+        &-card {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &::after {
+                content: '';
+                top: 60px;
+                right: 30px;
+                position: absolute;
+                height: 0;
+                width: 0;
+                border-bottom: 25px solid white;
+                border-left: 20px solid #ff6d0b;
+                border-right: 20px solid #ff6d0b;
+            }
+
+            &::before {
+                content: '';
+                height: 60px;
+                width: 40px;
+                background: #ff6d0b;
+                background: linear-gradient(153deg, #ffc936, #ff6d0b 80%);
+                position: absolute;
+                top: 0;
+                right: 30px;
+            }
+
+            h3 {
+                font-size: 2.1rem;
+                padding-bottom: 20px;
+            }
+
+            li {
+                margin-bottom: 15px;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+
+@media (min-width: $mq-sm) {
+    .nossosPlanosCard {
+        &-card {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        &-bronze {
+            justify-content: flex-end;
+
+            &-card {
+                height: 90%;
+            }
+        }
+
+        &-prata {
+            justify-content: flex-start;
+
+            &-card {
+                height: 90%;
+            }
+        }
+
+        &-ouro {
+            &-card {
+                height: 100%;
+
+                &::after {
+                    right: 10px;
+                }
+
+                &::before {
+                    right: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $mq-lg) {
+    .nossosPlanosCard {
+        &-ouro {
+            &-card {
+                height: 100%;
+
+                &::after {
+                    right: 30px;
+                }
+
+                &::before {
+                    right: 30px;
+                }
+            }
+        }
+    }
+}
