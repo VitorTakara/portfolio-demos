@@ -2,7 +2,7 @@
     let lastScroll = 0;
     let currentScroll;
     const velocityBG = isMobile() ? 0.5 : 1.2; // Velocidade dos elementos do Background
-    const velocityCellPhones = isMobile() ? 20 : 10; // Velocidade dos celulares no Container-3
+    const velocityCellPhones = isMobile() ? 45 : 10; // Velocidade dos celulares no Container-3
     const bg_el = document.querySelector(".main"); // Main Container
     const container3_el = document.querySelector(".container-3");
     const container3_img1 = document.querySelector(".container-3-img-1");
