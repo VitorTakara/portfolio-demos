@@ -47,22 +47,22 @@
    <!-- /SEO Friendly -->
 
    <div class="sideMenu" id="menu">
-      <a onclick="goTo('container-1')">Home</a>
-      <a onclick="goTo('container-2')">Recursos</a>
-      <a onclick="goTo('container-4')">I.A.</a>
-      <a onclick="goTo('container-5')">Planos</a>
-      <a onclick="goTo('container-7')">Contato</a>
+      <a class="navAnchor" onclick="goTo('container-1')">Home</a>
+      <a class="navAnchor" onclick="goTo('container-2')">Recursos</a>
+      <a class="navAnchor" onclick="goTo('container-4')">I.A.</a>
+      <a class="navAnchor" onclick="goTo('container-5')">Planos</a>
+      <a class="navAnchor" onclick="goTo('container-7')">Contato</a>
       <a href="#">Minha Conta</a>
    </div>
 
    <header class="header">
       <nav class="nav header-desktopNav">
-         <a onclick="goTo('container-1')">Home</a>
-         <a onclick="goTo('container-2')">Recursos</a>
-         <a onclick="goTo('container-4')">I.A.</a>
-         <a onclick="goTo('container-5')">Planos</a>
-         <a onclick="goTo('container-7')">Contato</a>
-         <a href="#">Minha Conta</a>
+         <a class="navAnchor" onclick="goTo('container-1')">Home</a>
+         <a class="navAnchor" onclick="goTo('container-2')">Recursos</a>
+         <a class="navAnchor" onclick="goTo('container-4')">I.A.</a>
+         <a class="navAnchor" onclick="goTo('container-5')">Planos</a>
+         <a class="navAnchor" onclick="goTo('container-7')">Contato</a>
+         <a class="btnMinhaConta" href="#">Minha Conta</a>
       </nav>
       <button class="toggle-button btn-mobileMenu" type="button">☰</button>
       <div class="p-6">
@@ -85,7 +85,10 @@
                </div>
             </div>
             <div class="container-1-content2">
-               <img src="img/home_img.png" alt="Imagem de 2 tablets com o sistema NOQ" />
+               <picture>
+                  <source srcset="img/home_img2x.png" media="(min-width: 1200px)"> 
+                  <img srcset="img/home_img.png" alt="Imagem de 2 tablets com o sistema NOQ">
+               </picture>
             </div>
             <div class="display-max-sm text-center">
                <button type="button" class="btn btn-download">download</button>
@@ -140,15 +143,24 @@
       <!-- CONTAINER 3 -->
       <div class="container-3">
          <div class="container-3-img container-3-img-1">
-            <img src="img/container_3_1.png" alt="Imagem de um celular contendo uma screenshot do sistema NOQ Web">
+            <picture>
+               <source srcset="img/container_3_1.jpg" media="(min-width: 760px)"> 
+               <img srcset="img/blank.png" alt="Imagem de um celular contendo uma screenshot do sistema NOQ Web">
+            </picture>
          </div>
 
          <div class="container-3-img container-3-img-2">
-            <img src="img/container_3_2.png" alt="Imagem de um celular contendo uma screenshot do sistema NOQ PDV">
+            <picture>
+               <source srcset="img/container_3_2.jpg" media="(min-width: 760px)"> 
+               <img srcset="img/blank.png" alt="Imagem de um celular contendo uma screenshot do sistema NOQ PDV">
+            </picture>
          </div>
 
          <div class="container-3-img container-3-img-3">
-            <img src="img/container_3_3.png" alt="Imagem de um celular contendo uma screenshot do sistema NOQ PDV">
+            <picture>
+               <source srcset="img/container_3_3.jpg" media="(min-width: 760px)"> 
+               <img srcset="img/blank.png" alt="Imagem de um celular contendo uma screenshot do sistema NOQ PDV">
+            </picture>
          </div>
       </div>
       <!-- /CONTAINER 3 -->
@@ -186,7 +198,10 @@
                   <p class="topic-desc">Inteligência para definição de Oportunidade de vendas para clientes</p>
                </div>
                <div class="container-4-content-gif">
-                  <img src="./img/cellphone_gif.gif" alt="Imagem de um celular contendo o sistema NOQ">
+                  <picture>
+                     <source srcset="img/cellphone_gif.gif" media="(min-width: 760px)"> 
+                     <img srcset="img/blank.png" alt="Imagem de um celular contendo o sistema NOQ">
+                  </picture>
                </div>
             </div>
          </div>
@@ -269,7 +284,11 @@
                </div>
             </div>
             <div class="container-6-content2" data-aos="fade-left">
-               <img src="img/baixe_o_noq.png.png" alt="Imagem de um tablet com o sistema NOQ e encima dele, o aparelho Cielo Lio contendo também o sistema NOQ" />
+               <picture>
+                  <source srcset="img/baixe_o_noq3x.png" media="(min-width: 1200px)"> 
+                  <source srcset="img/baixe_o_noq2x.png" media="(min-width: 760px)"> 
+                  <img srcset="img/baixe_o_noq.png" alt="Imagem de um tablet com o sistema NOQ e encima dele, o aparelho Cielo Lio contendo também o sistema NOQ">
+               </picture>
             </div>
             <div class="display-max-sm text-center">
                <button type="button" class="btn btn-download">download</button>
