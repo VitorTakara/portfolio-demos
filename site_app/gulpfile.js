@@ -68,9 +68,10 @@ gulp.task("js", function() {
           "app/js/slideout.js",
           "app/js/zenscroll.js",
           "app/js/parallaxScroll.js",
-          "app/js/lazyload.js",
           "app/js/submitForm.js",
-          "app/js/aos.js"])
+          "app/js/aos.js",
+          "app/js/videoPlay.js",
+          "app/js/lazyload.js"])
     //.pipe(sourcemaps.init()) //ATIVAR SE QUISER SOURCEMAP
     .pipe(rigger())
     .pipe(concat("main.js"))

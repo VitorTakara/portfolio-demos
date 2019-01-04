@@ -26,7 +26,11 @@
 </head>
 
 <body>
-
+   <div id="video-overlay" class="video-overlay">
+      <a class="video-overlay-close">&times;</a>
+      <iframe id="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/ngElkyQ6Rhs" frameborder="0" allowfullscreen></iframe>
+   </div>
+   
    <!-- Loading -->
    <div class="screen animated" id="loading">
       <div class="loader">
@@ -85,6 +89,9 @@
                </div>
             </div>
             <div class="container-1-content2">
+				<a id="play-video" class="video-play-button" href="#">
+					<span></span>
+                </a>
                <picture>
                   <source srcset="img/home_img2x.png" media="(min-width: 1200px)"> 
                   <img srcset="img/home_img.png" alt="Imagem de 2 tablets com o sistema NOQ">
