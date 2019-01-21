@@ -1,0 +1,157 @@
+/*
+    Animações
+*/
+
+.animate {
+    animation: shake-right .7s;
+}
+
+.fireworkExtraSmall {
+    animation: firework_extra_small 1.8s;
+}
+
+.fireworkSmall {
+    animation: firework_small 1.8s;
+}
+
+.fireworkMedium {
+    animation: firework_medium 1.8s;
+}
+
+.fireworkLarge {
+    animation: firework_large 1.8s;
+}
+
+.fireworkExtraLarge {
+    animation: firework_extra_large 1.8s;
+}
+
+@keyframes firework_extra_small {
+    0% {
+        opacity: 0;
+        top: 100%;
+    }
+    5% {
+        opacity: 1;
+        top: 70%;
+    }
+    25% {
+        top: 60%;
+    }
+    100% {
+        top: 60%;
+    }
+}
+
+@keyframes firework_small {
+    0% {
+        opacity: 0;
+        top: 100%;
+    }
+    5% {
+        opacity: 1;
+        top: 70%;
+    }
+    25% {
+        top: 50%;
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+@keyframes firework_medium {
+    0% {
+        opacity: 0;
+        top: 100%;
+    }
+    5% {
+        opacity: 1;
+        top: 70%;
+    }
+    25% {
+        top: 35%;
+    }
+    100% {
+        top: 35%;
+    }
+}
+
+@keyframes firework_large {
+    0% {
+        opacity: 0;
+        top: 100%;
+    }
+    5% {
+        opacity: 1;
+        top: 80%;
+    }
+    25% {
+        top: 20%;
+    }
+    100% {
+        top: 20%;
+    }
+}
+
+@keyframes firework_extra_large {
+    0% {
+        opacity: 0;
+        top: 100%;
+    }
+    5% {
+        opacity: 1;
+        top: 80%;
+    }
+    25% {
+        top: 5%;
+    }
+    100% {
+        top: 5%;
+    }
+}
+
+@keyframes shake-right {
+    0% {
+        border-right: solid 0px white;
+    }
+    25% {
+        border-right: solid 30px white;
+    }
+    50% {
+        border-right: solid 0px white;
+    }
+    60% {
+        border-right: solid 10px white;
+    }
+    75% {
+        border-right: solid 0px white;
+    }
+    85% {
+        border-right: solid 5px white;
+    }
+    95% {
+        border-right: solid 0px white;
+    }
+    95% {
+        border-right: solid 2px white;
+    }
+    100% {
+        border-right: solid 0px white;
+    }
+}
+
+@keyframes shake {
+    0% {
+        @include transform(0, 0);
+    }
+    35% {
+        @include transform(0, 10px);
+    }
+    55% {
+        @include transform(0, -10px);
+    }
+    100% {
+        @include transform(0, 0px);
+    }
+}
