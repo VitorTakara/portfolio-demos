@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="utf-8">
+   <title>Video Aulas</title>
+   <meta name="robots" content="noindex">
+   <meta http-equiv="cleartype" content="on">
+   <meta name="MobileOptimized" content="320">
+   <meta name="HandheldFriendly" content="True">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+   <link rel="stylesheet" type="text/css" href="css/videoaulas.css">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body class="login__bg">
+   <div id="video-overlay" class="video-overlay">
+      <div id="video-iframe"></div>
+      <div class="video-overlay-background"></div>
+      <a class="video-overlay-close">&times;</a>
+   </div>
+
+   <main id="panel" class="main">
+      <div class="videoContainer">
+         <img class="videoContainer__logo" src="img/logobig.png">
+         <div class="videoContainer__userControllers">
+            <a href="index.html" class="videoContainer__voltarBtn"><img class="videoContainer__voltarImg" src="img/left-arrow.svg" /><span
+                  class="pl-3">Sair</span></a>
+            <div class="searchInput">
+               <div class="searchInput__icon"><img class="searchInput__img" src="img/lupa.svg"></div>
+               <input type="text" class="searchInput__input" id="searchInput" placeholder="Pesquisar...">
+            </div>
+         </div>
+         <div class="videoContainer__videoAulas" id="videoAulas">
+            <!-- As aulas serão populadas aqui dinâmicamente de acordo com a constante "video_aulas" lá embaixo na tag <Script> -->
+         </div>
+      </div>
+
+      <script>
+         // VIDEO AULAS
+         const videoAulas = [{
+               nome: "Como fazer uma torta de banana",
+               video_path: "video_aulas/video.mp4"
+            },
+            {
+               nome: "Fazendo um bolo de chocolate",
+               video_path: "video_aulas/video.mp4"
+            },
+            {
+               nome: "Dicas de como falar melhor em publico",
+               video_path: "video_aulas/video.mp4"
+            },
+			{
+               nome: "Como ficar fluente no Ingles?",
+               video_path: "video_aulas/video.mp4"
+            },
+			{
+               nome: "Quando devo iniciar meus investimentos?",
+               video_path: "video_aulas/video.mp4"
+            },
+			{
+               nome: "Como fazer videos para Youtube",
+               video_path: "video_aulas/video.mp4"
+            },
+			{
+               nome: "Como aplicar no tesouro direto",
+               video_path: "video_aulas/video.mp4"
+            },
+			{
+               nome: "10 Dicas para parar de procastinar",
+               video_path: "video_aulas/video.mp4"
+            }
+         ]
+
+         const searchInput = document.querySelector("#searchInput");
+         searchInput.addEventListener("keyup", function () {
+            if (searchInput.value != '') {
+               // Insere apenas as aulas filtradas
+               draw_videoAulas(videoAulas.filter(i => i.nome.includes(searchInput.value)));
+            } else {
+               draw_videoAulas(videoAulas); // Insere todos as aulas
+            }
+         });
+
+         const draw_videoAulas = (view = []) => {
+            let template = '';
+
+            view.forEach(i => {
+               template +=
+                  `
+                  <div class="videoContainer__card animated fadeIn faster" onclick="openVideoModal('${i.video_path}')">
+                     <div class="overlay animated fadeIn"><span class="overlay__playBtn"></span></div>
+                     <p>${i.nome}</p>
+                  </div>
+               `;
+            });
+
+            // Desenha o template final no elemento
+            document.querySelector("#videoAulas").innerHTML = template;
+         }
+
+         // Inicializa com a lista completa
+         draw_videoAulas(videoAulas);
+
+         function openVideoModal(video_path) {
+            const videoOverlayID = document.querySelector("#video-overlay");
+            const videoOverlayClass = document.querySelector(".video-overlay");
+            const videoOverlayBG = document.querySelector(".video-overlay-background");
+            const videoOverlayCloseClass = document.querySelector(".video-overlay-close");
+            const videoIframe = document.querySelector("#video-iframe");
+            
+            const bodyWidth = document.querySelector('body').offsetWidth;
+
+               videoIframe.style.width = "320px";
+
+            videoIframe.innerHTML = `
+               <video autoplay controls id="video_ctrl" style="width: 100%;">
+                  <source src="${video_path}" type="video/mp4">
+               </video>`;
+            document.getElementById('video_ctrl').play();
+            
+            videoOverlayID.classList.add("open");
+
+            videoOverlayBG.addEventListener("click", function (e) {
+               e.preventDefault();
+               videoIframe.innerHTML = '';
+               videoOverlayClass.classList.remove("open");
+            })
+
+            videoOverlayCloseClass.addEventListener("click", function (e) {
+               e.preventDefault();
+               videoIframe.innerHTML = '';
+               videoOverlayClass.classList.remove("open");
+            })
+         }
+      </script>
+
+   </main>
+     
+</body>
+
+</html>
