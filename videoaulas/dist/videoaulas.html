@@ -78,7 +78,7 @@
          searchInput.addEventListener("keyup", function () {
             if (searchInput.value != '') {
                // Insere apenas as aulas filtradas
-               draw_videoAulas(videoAulas.filter(i => i.nome.includes(searchInput.value)));
+               draw_videoAulas(videoAulas.filter(i => i.nome.toLowerCase().includes(searchInput.value.toLowerCase())));
             } else {
                draw_videoAulas(videoAulas); // Insere todos as aulas
             }
